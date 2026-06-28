@@ -1,0 +1,53 @@
+ColumnForge
+===========
+
+What it is:
+A batch command-line tool that takes a folder of Excel spreadsheets
+(.xlsx) and converts every column in every file into its own .txt file.
+
+How it works:
+Point ColumnForge at a folder. For each .xlsx file it finds, it creates
+a matching "output-<filename>" folder right next to that file. Inside,
+every column becomes a separate .txt file — named after the column
+header — with each row's value written as a line in that file.
+
+Example:
+  /spreadsheets/
+    bitcoin.xlsx
+    eth.xlsx
+
+  Running ColumnForge on /spreadsheets/ produces:
+
+  /spreadsheets/
+    bitcoin.xlsx
+    eth.xlsx
+    output-bitcoin/
+      Date.txt
+      Price.txt
+      Volume.txt
+    output-eth/
+      Date.txt
+      Price.txt
+      Volume.txt
+
+Why it's useful:
+- Pull raw column data out of spreadsheets without opening Excel
+- Feed individual columns into other scripts, models, or tools
+- Process dozens of spreadsheets in one command instead of one by one
+- Archive or share single fields from larger datasets
+
+Who made it:
+Built by JOMO (@themostjomo)
+
+Requirements:
+- Python 3
+- pandas
+- openpyxl
+
+Basic usage:
+  python columnforge.py <folder>
+  python columnforge.py <folder> --sheet "Sheet2"
+  python columnforge.py --version
+
+License:
+MIT
