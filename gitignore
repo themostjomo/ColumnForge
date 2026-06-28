@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+myenv/
+.venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# ColumnForge output folders
+output-*/
+
+# Editor
+.vscode/
+.idea/
